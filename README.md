@@ -1,1 +1,2 @@
 # ITCS_2530_Programming_Assignments
+My interest for this class is anime, as an avid watcher I sometimes find myself struggling to find what to watch next, I will build a program to help others find something to watch by presenting the user with a list of some of the more popular anime that they may have watched. From that list they will make selections and the program will output a few anime that they did not select and that may not be on the list with a rating giving them a "reccomendation rating".
