@@ -4,6 +4,7 @@
 #include <string>
 #include <iomanip>
 #include <fstream>
+using namespace std;
 
 int main()
 {
@@ -58,6 +59,5 @@ int main()
 		<< anime_value << "\n";
 
 	report.close();
-
 }
 
