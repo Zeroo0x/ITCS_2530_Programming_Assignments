@@ -101,7 +101,7 @@ int main()
 
 
 
-    std::ofstream report("report.txt");
+    std::ofstream report("C:\\Users\\Owner\\source\\repos\\ITCS_2530_Programming_Assignments\\programming assignment 3\\report.txt");
 
     //Reporting
     report << std::left;
@@ -131,8 +131,6 @@ int main()
 
     report << std::setw(30) << "Concluding Judgment"
         << std::setw(20) << outputstatement1 << outputstatement2;
-    //report << std::setw(30) << "Concluding Judgment (extended)"
-        //<< std::setw(20) << outputstatement2 << "\n";
     report.close();
 
     return 0;
