@@ -31,6 +31,8 @@ int main()
     std::cout << "Thanks, now lets play a little game before we go, we will calculate the value of your anime and watching habits.\n";
     std::cout << "If you had to pay money per watch hour, what would be the absoulte most you would be willing to pay? (Exact amount to the second decimal place)\n";
     std::cin >> anime_price;
+    int choice;
+
 
     //Formula
     double anime_value = watch_hours * anime_price;
@@ -38,40 +40,66 @@ int main()
     std::cout << "So you said you would pay $" << anime_price << " per watch hour, and you watch anime for " << watch_hours << " hours per week.\n";
     std::cout << "This means your watching habits are worth $" << anime_value << " per week, really makes you think about how much time you watch anime, doesn't it?\n";
 
-    if (watch_hours > 20)
+    std::cout << "\n--- Main Menu ---\n";
+    std::cout << "1. View Watching Summary\n";
+    std::cout << "2. View Spending Summary\n";
+    std::cout << "Enter your choice: ";
+
+    std::cin >> choice;
+
+    switch (choice)
     {
-        outputstatement1 = "wow, you watch a lot of anime, perhaps you should tone that down a little\n";
-    }
-    else if (watch_hours > 10 && watch_hours <= 20)
-    {
-        outputstatement1 = "you watch a decent amount of anime, but not too much, nothing crazy.\n";
-    }
-    else if (watch_hours > 1 && watch_hours <= 10)
-    {
-        outputstatement1 = "you probably have a busy week and are just squezing in some time for your shows\n";
-    }
-    else
-    {
-        outputstatement1 = "you don't watch too much anime.";
+    case 1:
+        // Display watching summary
+        if (watch_hours > 20)
+        {
+            outputstatement1 = "Wow, you watch a lot of anime. Over 20 hours a week? perhaps you should tone that down a little\n";
+        }
+        else if (watch_hours > 10 && watch_hours <= 20)
+        {
+            outputstatement1 = "You watch a decent amount of anime, somewhere between 10 and 20 hours a week, but not too much, nothing crazy.\n";
+        }
+        else if (watch_hours > 1 && watch_hours <= 10)
+        {
+            outputstatement1 = "You probably have a busy week and are just squezing in some time for your shows, under 10 hours a week I get it.\n";
+        }
+        else
+        {
+            outputstatement1 = "You don't watch too much anime.";
+        }
+        std::cout << outputstatement1;
+        break;
+
+    case 2:
+        // Display spending summary
+        if (anime_price > 80)
+        {
+            outputstatement2 = "Alright I see you! You are a big spender over 80 bucks! \n";
+        }
+        else if (anime_price > 20 && anime_price <= 80)
+        {
+            outputstatement2 = "You are willing to pay a decent amount for your anime over 20 bucks, but nothing too crazy\n";
+        }
+        else if (anime_price > 1 && anime_price <= 20)
+        {
+            outputstatement2 = "You are likely on a budget or don't want to spend too much on watching a show,keeping it under 20 dollars which is understandable.\n";
+        }
+        else
+        {
+            outputstatement2 = "You don't watch anime or you are beyond frugal!\n";
+        }
+        std::cout << outputstatement2;
+        break;
+
+    default:
+        std::cout << "Invalid selection!\n";
+        break;
     }
 
-    if (anime_price > 80)
-    {
-        outputstatement2 = "alright I see you! You are a big spender \n";
-    }
-    else if (anime_price > 20 && anime_price <= 80)
-    {
-        outputstatement2 = "you are willing to pay a decent amount for your anime\n";
-    }
-    else if (anime_price > 1 && anime_price <= 20)
-    {
-        outputstatement2 = "you are likely on a budget or don't want to spend too much on watching a show, which is understandable.\n";
-    }
-    else
-    {
-        outputstatement2 = "you don't watch anime or you are beyond frugal!\n";
-    }
-	std::cout << "So all in all " << user_name << ", " << outputstatement1 << " and " << outputstatement2;
+
+
+
+
 
     std::ofstream report("report.txt");
 
@@ -102,9 +130,9 @@ int main()
         << anime_value << "\n";
 
     report << std::setw(30) << "Concluding Judgment"
-        << std::setw(20) << outputstatement1 << "\n";
-    report << std::setw(30) << "Concluding Judgment (extended)"
-        << std::setw(20) << outputstatement2 << "\n";
+        << std::setw(20) << outputstatement1 << outputstatement2;
+    //report << std::setw(30) << "Concluding Judgment (extended)"
+        //<< std::setw(20) << outputstatement2 << "\n";
     report.close();
 
     return 0;
