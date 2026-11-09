@@ -235,7 +235,7 @@ int main()
         std::cout << "So you mostly watch drama and mostly enjoy drama.";
     }
 
-        std::ofstream report("C:\\Users\\Owner\\source\\repos\\ITCS_2530_Programming_Assignments\\programming assignment 3\\report.txt");
+        std::ofstream report("report.txt");
 
         //Reporting
         report << std::left;
@@ -264,9 +264,19 @@ int main()
             << anime_value << "\n";
 
         report << std::setw(30) << "Concluding Judgment"
-            << std::setw(20) << outputstatement1 << outputstatement2;
+            << std::setw(20) << outputstatement1 << "\n" << outputstatement2;
         report.close();
+        
+        std::ifstream read_report("report.txt");
 
+        std::string line;
+
+        while (std::getline(read_report, line))
+        {
+            std::cout << line << "\n";
+        }
+
+        read_report.close();
         return 0;
-    
+        
 }
