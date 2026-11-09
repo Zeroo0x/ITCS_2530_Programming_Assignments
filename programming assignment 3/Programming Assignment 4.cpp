@@ -48,7 +48,7 @@ int main()
 
     std::cout << "So you said you would pay $" << anime_price << " per watch hour, and you watch anime for " << watch_hours << " hours per week.\n";
     std::cout << "This means your watching habits are worth $" << anime_value << " per week, really makes you think about how much time you watch anime, doesn't it?\n";
-
+    //Loop for menu
     do {
         std::cout << "\n--- Main Menu ---\n";
         std::cout << "1. View Watching Summary\n";
@@ -107,7 +107,7 @@ int main()
         }
     } while (choice != 3);
     
-    
+	//For loop for watched anime
     for (int i = 0; i < 3; i++) {
         std::cout << "Have you watched any of the following anime?\n";
         std::cout << "1. Naruto\n";
@@ -161,7 +161,7 @@ int main()
 	else {
 		std::cout << "You seem to watch Drama anime the most!\n";
 	}
-    
+	//While loop for liked anime
     while (like_counter < 5) {
         std::cout << "Do you like any of the following anime?\n";
         std::cout << "1. Naruto\n";
