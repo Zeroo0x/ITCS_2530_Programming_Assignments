@@ -101,6 +101,8 @@ int main()
             std::cout << outputstatement2;
             break;
 
+        case 3:
+            break;
         default:
             std::cout << "Invalid selection!\n";
             break;
@@ -208,31 +210,31 @@ int main()
 
     }
     if (shonen_score > seinen_score && shonen_score > drama_score && like_shonen > like_seinen && like_shonen > like_drama) {
-        std::cout << "So you mostly watch shonen and mostly enjoy shonen.";
+        std::cout << "So you mostly watch shonen and mostly enjoy shonen.\n";
     }
     else if (shonen_score > seinen_score && shonen_score > drama_score && like_seinen > like_shonen && like_seinen > like_drama) {
-        std::cout << "So you mostly watch shonen but mostly enjoy seinen.";
+        std::cout << "So you mostly watch shonen but mostly enjoy seinen.\n";
     }
     else if (shonen_score > seinen_score && shonen_score > drama_score && like_drama > like_shonen && like_drama > like_seinen) {
-        std::cout << "So you mostly watch shonen but mostly enjoy drama.";
+        std::cout << "So you mostly watch shonen but mostly enjoy drama.\n";
     }
     else if (seinen_score > shonen_score && seinen_score > drama_score && like_shonen > like_seinen && like_shonen > like_drama) {
-        std::cout << "So you mostly watch seinen but mostly enjoy shonen.";
+        std::cout << "So you mostly watch seinen but mostly enjoy shonen.\n";
     }
     else if (seinen_score > shonen_score && seinen_score > drama_score && like_seinen > like_shonen && like_seinen > like_drama) {
-        std::cout << "So you mostly watch seinen and mostly enjoy seinen.";
+        std::cout << "So you mostly watch seinen and mostly enjoy seinen.\n";
     }
     else if (seinen_score > shonen_score && seinen_score > drama_score && like_drama > like_shonen && like_drama > like_seinen) {
-        std::cout << "So you mostly watch seinen but mostly enjoy drama.";
+        std::cout << "So you mostly watch seinen but mostly enjoy drama.\n";
     }
     else if (drama_score > shonen_score && drama_score > seinen_score && like_shonen > like_seinen && like_shonen > like_drama) {
-        std::cout << "So you mostly watch drama but mostly enjoy shonen.";
+        std::cout << "So you mostly watch drama but mostly enjoy shonen.\n";
     }
     else if (drama_score > shonen_score && drama_score > seinen_score && like_seinen > like_shonen && like_seinen > like_drama) {
-        std::cout << "So you mostly watch drama but mostly enjoy seinen.";
+        std::cout << "So you mostly watch drama but mostly enjoy seinen.\n";
     }
     else if (drama_score > shonen_score && drama_score > seinen_score && like_drama > like_shonen && like_drama > like_seinen) {
-        std::cout << "So you mostly watch drama and mostly enjoy drama.";
+        std::cout << "So you mostly watch drama and mostly enjoy drama.\n";
     }
 
     std::ofstream report("report.txt");
