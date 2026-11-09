@@ -48,7 +48,7 @@ int main()
 
     std::cout << "So you said you would pay $" << anime_price << " per watch hour, and you watch anime for " << watch_hours << " hours per week.\n";
     std::cout << "This means your watching habits are worth $" << anime_value << " per week, really makes you think about how much time you watch anime, doesn't it?\n";
-
+    //Loop for menu
     do {
         std::cout << "\n--- Main Menu ---\n";
         std::cout << "1. View Watching Summary\n";
@@ -101,13 +101,15 @@ int main()
             std::cout << outputstatement2;
             break;
 
+        case 3:
+            break;
         default:
             std::cout << "Invalid selection!\n";
             break;
         }
     } while (choice != 3);
-    
-    
+
+    //For loop for watched anime
     for (int i = 0; i < 3; i++) {
         std::cout << "Have you watched any of the following anime?\n";
         std::cout << "1. Naruto\n";
@@ -142,26 +144,26 @@ int main()
             std::cout << "Drama, I see...\n";
             drama_score++;
             break;
-		case 0:
-			std::cout << "You haven't watched any of these anime.\n";
-			break;
-		default:
-			std::cout << "You didn't select a valid option.\n";
-			break;
-		
+        case 0:
+            std::cout << "You haven't watched any of these anime.\n";
+            break;
+        default:
+            std::cout << "You didn't select a valid option.\n";
+            break;
+
         }
 
     }
-	if (shonen_score > seinen_score&& shonen_score > drama_score) {
-		std::cout << "You seem to watch Shonen anime the most!\n";
-	}
-	else if (seinen_score > shonen_score && seinen_score > drama_score) {
-		std::cout << "You seem to watch Seinen anime the most!\n";
-	}
-	else {
-		std::cout << "You seem to watch Drama anime the most!\n";
-	}
-    
+    if (shonen_score > seinen_score && shonen_score > drama_score) {
+        std::cout << "You seem to watch Shonen anime the most!\n";
+    }
+    else if (seinen_score > shonen_score && seinen_score > drama_score) {
+        std::cout << "You seem to watch Seinen anime the most!\n";
+    }
+    else {
+        std::cout << "You seem to watch Drama anime the most!\n";
+    }
+    //While loop for liked anime
     while (like_counter < 5) {
         std::cout << "Do you like any of the following anime?\n";
         std::cout << "1. Naruto\n";
@@ -202,71 +204,81 @@ int main()
         default:
             std::cout << "You didn't select a valid option.\n";
             break;
-        
+
         }
         like_counter++;
 
     }
     if (shonen_score > seinen_score && shonen_score > drama_score && like_shonen > like_seinen && like_shonen > like_drama) {
-        std::cout << "So you mostly watch shonen and mostly enjoy shonen.";
+        std::cout << "So you mostly watch shonen and mostly enjoy shonen.\n";
     }
     else if (shonen_score > seinen_score && shonen_score > drama_score && like_seinen > like_shonen && like_seinen > like_drama) {
-        std::cout << "So you mostly watch shonen but mostly enjoy seinen.";
+        std::cout << "So you mostly watch shonen but mostly enjoy seinen.\n";
     }
     else if (shonen_score > seinen_score && shonen_score > drama_score && like_drama > like_shonen && like_drama > like_seinen) {
-        std::cout << "So you mostly watch shonen but mostly enjoy drama.";
+        std::cout << "So you mostly watch shonen but mostly enjoy drama.\n";
     }
     else if (seinen_score > shonen_score && seinen_score > drama_score && like_shonen > like_seinen && like_shonen > like_drama) {
-        std::cout << "So you mostly watch seinen but mostly enjoy shonen.";
+        std::cout << "So you mostly watch seinen but mostly enjoy shonen.\n";
     }
     else if (seinen_score > shonen_score && seinen_score > drama_score && like_seinen > like_shonen && like_seinen > like_drama) {
-        std::cout << "So you mostly watch seinen and mostly enjoy seinen.";
+        std::cout << "So you mostly watch seinen and mostly enjoy seinen.\n";
     }
     else if (seinen_score > shonen_score && seinen_score > drama_score && like_drama > like_shonen && like_drama > like_seinen) {
-        std::cout << "So you mostly watch seinen but mostly enjoy drama.";
+        std::cout << "So you mostly watch seinen but mostly enjoy drama.\n";
     }
     else if (drama_score > shonen_score && drama_score > seinen_score && like_shonen > like_seinen && like_shonen > like_drama) {
-        std::cout << "So you mostly watch drama but mostly enjoy shonen.";
+        std::cout << "So you mostly watch drama but mostly enjoy shonen.\n";
     }
     else if (drama_score > shonen_score && drama_score > seinen_score && like_seinen > like_shonen && like_seinen > like_drama) {
-        std::cout << "So you mostly watch drama but mostly enjoy seinen.";
+        std::cout << "So you mostly watch drama but mostly enjoy seinen.\n";
     }
     else if (drama_score > shonen_score && drama_score > seinen_score && like_drama > like_shonen && like_drama > like_seinen) {
-        std::cout << "So you mostly watch drama and mostly enjoy drama.";
+        std::cout << "So you mostly watch drama and mostly enjoy drama.\n";
     }
 
-        std::ofstream report("C:\\Users\\Owner\\source\\repos\\ITCS_2530_Programming_Assignments\\programming assignment 3\\report.txt");
+    std::ofstream report("report.txt");
 
-        //Reporting
-        report << std::left;
-        report << std::setw(30) << "ANIME WATCHING REPORT" << "\n";
-        report << std::setw(30) << "---------------------" << "\n";
-        report << std::setw(30) << "Category"
-            << std::setw(20) << "Value" << "\n";
-        report << std::setw(30) << "---------------------"
-            << std::setw(20) << "----------------" << "\n";
+    //Reporting
+    report << std::left;
+    report << std::setw(30) << "ANIME WATCHING REPORT" << "\n";
+    report << std::setw(30) << "---------------------" << "\n";
+    report << std::setw(30) << "Category"
+        << std::setw(20) << "Value" << "\n";
+    report << std::setw(30) << "---------------------"
+        << std::setw(20) << "----------------" << "\n";
 
-        report << std::setw(30) << "Name"
-            << std::setw(20) << user_name << "\n";
+    report << std::setw(30) << "Name"
+        << std::setw(20) << user_name << "\n";
 
-        report << std::setw(30) << "Favorite Anime"
-            << std::setw(20) << favorite_check << "\n";
+    report << std::setw(30) << "Favorite Anime"
+        << std::setw(20) << favorite_check << "\n";
 
-        report << std::setw(30) << "Hours Per Week"
-            << std::setw(20) << watch_hours << "\n";
+    report << std::setw(30) << "Hours Per Week"
+        << std::setw(20) << watch_hours << "\n";
 
-        report << std::setw(30) << "Price Per Hour"
-            << "$" << std::fixed << std::setprecision(2)
-            << anime_price << "\n";
+    report << std::setw(30) << "Price Per Hour"
+        << "$" << std::fixed << std::setprecision(2)
+        << anime_price << "\n";
 
-        report << std::setw(30) << "Weekly Anime Value"
-            << "$" << std::fixed << std::setprecision(2)
-            << anime_value << "\n";
+    report << std::setw(30) << "Weekly Anime Value"
+        << "$" << std::fixed << std::setprecision(2)
+        << anime_value << "\n";
 
-        report << std::setw(30) << "Concluding Judgment"
-            << std::setw(20) << outputstatement1 << outputstatement2;
-        report.close();
+    report << std::setw(30) << "Concluding Judgment"
+        << std::setw(20) << outputstatement1 << "\n" << outputstatement2;
+    report.close();
 
-        return 0;
-    
+    std::ifstream read_report("report.txt");
+
+    std::string line;
+
+    while (std::getline(read_report, line))
+    {
+        std::cout << line << "\n";
+    }
+
+    read_report.close();
+    return 0;
+
 }
