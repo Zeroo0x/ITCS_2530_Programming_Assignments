@@ -28,6 +28,7 @@ const std::string WHITE = "\033[37m";
 const std::string BOLD = "\033[1m";
 
 void printWelcomeBanner() {
+    //New Intro
     std::cout << BOLD << CYAN;
     std::cout << "==================================================\n";
     std::cout << "          ANIME RECOMMENDATION SERVICE            \n";
